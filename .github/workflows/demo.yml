@@ -16,3 +16,16 @@ jobs:
         with:
           name: sha256-windows.exe
           path: dist/sha256.exe
+
+  build-on-windows2:
+    runs-on: windows-2022
+    needs: build-on-window
+    steps:
+      - name: download exe file
+        uses: actions/download-artifact@v3
+        with:
+          name: sha256-windows.exe
+      - name: text exe file
+        run: |
+          ls
+          ./sha256.exe sha256.exe
