@@ -19,7 +19,7 @@ jobs:
 
   build-on-windows2:
     runs-on: windows-2022
-    needs: build-on-window
+    needs: build-on-windows
     steps:
       - name: download exe file
         uses: actions/download-artifact@v3
